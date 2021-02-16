@@ -1,0 +1,43 @@
+{
+  "name": "focus-formik-error",
+  "description": "Simple auto focus to first Formik error",
+  "author": "Adrián Ferré <adrian_c4@hotmail.com> (https://adrianferre.netlify.app/)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrianferre/focus-formik-error.git"
+  },
+  "version": "1.0.0-beta.0",
+  "private": false,
+  "keywords": [
+    "formik",
+    "form",
+    "forms",
+    "react",
+    "react-dom",
+    "hooks",
+    "react hooks",
+    "focus",
+    "error",
+    "validation"
+  ],
+  "scripts": {
+    "build": "react-scripts build",
+    "prepublish": "npm run build"
+  },
+  "peerDependencies": {
+    "formik": ">=2.0.0",
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.2",
+    "formik": "2.0.0",
+    "react": "16.8.0",
+    "typescript": "^4.1.5"
+  },
+  "bugs": {
+    "url": "https://github.com/adrianferre/focus-formik-error/issues"
+  },
+  "homepage": "https://github.com/adrianferre/focus-formik-error#README.md",
+  "main": "./index.tsx",
+  "license": "MIT"
+}
