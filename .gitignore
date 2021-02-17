@@ -1,5 +1,12 @@
-# node_modules
+# Compiled code
+dist
+
+# Packages
 /node_modules
+
+# Misc
 .DS_Store
 .vscode
-dist
+.npmrc
+
+
