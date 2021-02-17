@@ -22,7 +22,11 @@
   ],
   "scripts": {
     "check-types": "tsc",
-    "build": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "yarn type-check --watch",
+    "build": "npm run build:types && npm run build:js",
+    "build:types": "tsc",
+    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
     "prepublish": "npm run build"
   },
   "peerDependencies": {
