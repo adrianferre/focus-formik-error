@@ -1,8 +1,8 @@
 # Focus Formik error
 
-This component allows you to automatically focus errors in your [Formik](https://formik.org/docs/overview) form. The focus runs after the [Formik validation](https://formik.org/docs/guides/validation#when-does-validation-run).
+This component allows you to automatically focus errors in your [Formik](https://formik.org/docs/overview) form, the focus runs after the [validation](https://formik.org/docs/guides/validation#when-does-validation-run).
 
-![Example](./autoFocusExample.gif)
+![Example](https://github.com/adrianferre/focus-formik-error/blob/main/autoFocusExample.gif?raw=true)
 
 ## Getting Started
 
