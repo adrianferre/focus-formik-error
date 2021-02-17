@@ -21,7 +21,8 @@
     "validation"
   ],
   "scripts": {
-    "build": "react-scripts build",
+    "check-types": "tsc",
+    "build": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
     "prepublish": "npm run build"
   },
   "peerDependencies": {
@@ -29,6 +30,11 @@
     "react": ">=16.8.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.12.16",
     "@types/react": "^17.0.2",
     "formik": "2.0.0",
     "react": "16.8.0",
@@ -37,7 +43,12 @@
   "bugs": {
     "url": "https://github.com/adrianferre/focus-formik-error/issues"
   },
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/adrianferre/focus-formik-error#README.md",
-  "main": "./index.tsx",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1"
+  }
 }
