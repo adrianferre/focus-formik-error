@@ -50,6 +50,7 @@
   "files": [
     "dist"
   ],
+  "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "homepage": "https://github.com/adrianferre/focus-formik-error#README.md",
   "license": "MIT",
