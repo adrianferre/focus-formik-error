@@ -2,6 +2,11 @@
 
 This component allows you to automatically focus errors in your [Formik](https://formik.org/docs/overview) form, the focus runs after the [validation](https://formik.org/docs/guides/validation#when-does-validation-run).
 
+Main features
+- Support nested Arrays, nested Objects and both combined in values.
+- Simple and lightweight only 24kb, no extra animations.
+- No dependencies required.
+
 ![Example](https://github.com/adrianferre/focus-formik-error/blob/main/autoFocusExample.gif?raw=true)
 
 ## Getting Started
