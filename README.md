@@ -6,7 +6,7 @@ This component allows you to automatically focus errors in your [Formik](https:/
 
 ## Main goals
 
-- Support nested Arrays, nested Objects and both combined in values.
+- Support nested Arrays, nested Objects and both combined in Formik values.
 - Simple and lightweight only 24kb, no extra animations.
 - No dependencies required.
 - TypeScript support
@@ -19,7 +19,7 @@ npm i focus-formik-error
 
 ## How to use it
 
-You can use it by including it inside the Formik provider or also use ti with useFormik hook as follow.
+You can use it by including it inside the Formik provider or also use it with useFormik hook as follow.
 
 ### With Formik provider
 
