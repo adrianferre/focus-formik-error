@@ -8,7 +8,6 @@ This component allows you to automatically focus errors in your [Formik](https:/
 
 - Support nested Arrays, nested Objects and both combined in Formik values.
 - Simple and lightweight only 24kb, no extra animations.
-- No dependencies required.
 - TypeScript support
 
 ## Getting Started

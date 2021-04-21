@@ -54,5 +54,8 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "homepage": "https://github.com/adrianferre/focus-formik-error#README.md",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "core-js": "3.10.2"
+  }
 }
