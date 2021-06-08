@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from "react";
-import { getIn, FormikContext, FormikValues } from "formik";
+import { getIn, FormikContextType, FormikValues } from "formik";
 import flattenToLodashFormat from "./flattenToLodashFormat";
 
 /**
@@ -13,7 +13,7 @@ export interface FocusErrorProps {
    * Values from Formik provider.
    */
   formik: Pick<
-  FormikContext<FormikValues>,
+  FormikContextType<FormikValues>,
     "isSubmitting" | "touched" | "isValidating" | "errors"
   >;
   /**
