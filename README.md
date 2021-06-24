@@ -25,56 +25,53 @@ You can use it by including it inside the Formik provider or also use it with us
 Include the `<ConnectedFocusError />` component inside the Formik context provider.
 
 ```tsx
-import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import React from 'react'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
 
-import { ConnectedFocusError } from "focus-formik-error";
+import { ConnectedFocusError } from 'focus-formik-error'
 
 const Basic = () => (
   <Formik
     initialValues={{
-      name: "Poseidon",
+      name: 'Poseidon',
     }}
     onSubmit={(values, { setSubmitting, setErrors }) => {
       // Simulates server side validation
       setTimeout(() => {
-        const errors = {} as any;
+        const errors = {} as any
 
         if (!values.name) {
-          errors.country = "Name is required";
+          errors.country = 'Name is required'
         }
 
-        setErrors(errors);
-        setSubmitting(false);
-      }, 500);
-    }}
-  >
+        setErrors(errors)
+        setSubmitting(false)
+      }, 500)
+    }}>
     {({ errors, isSubmitting }) => (
-      <Form className={"form"}>
+      <Form className={'form'}>
         <ConnectedFocusError />
-        <div className={"input-container"}>
+        <div className={'input-container'}>
           <label>Name </label>
           <Field
-            type="text"
-            name="name"
-            className={`input ${errors.name ? "input-error" : ""}`}
+            type='text'
+            name='name'
+            className={`input ${errors.name ? 'input-error' : ''}`}
           />
-          <ErrorMessage name="name" component="div" className={"error-text"} />
+          <ErrorMessage name='name' component='div' className={'error-text'} />
         </div>
         <button
-          type="submit"
+          type='submit'
           disabled={isSubmitting}
-          style={{ marginBottom: "5em" }}
-        >
-          {isSubmitting ? "Submitting" : "Submit"}
+          style={{ marginBottom: '5em' }}>
+          {isSubmitting ? 'Submitting' : 'Submit'}
         </button>
       </Form>
     )}
   </Formik>
-);
+)
 
-export default Basic;
-
+export default Basic
 ```
 
 ### With useFormik
@@ -84,57 +81,58 @@ Include the `<FocusError />` component inside you form and pass `formik` as prop
 > **NOTE: Follow the same pattern in the name attribute of the input component used in the `initialValues` or the focus is not going to work. I.g: `name="values.name"`**
 
 ```tsx
-import React from "react";
-import { useFormik } from "formik";
+import React from 'react'
+import { useFormik } from 'formik'
 
-import { FocusError } from "focus-formik-error";
+import { FocusError } from 'focus-formik-error'
 
 const UseFormikExample = () => {
   const formik = useFormik({
     initialValues: {
-      name: "",
+      name: '',
     },
     onSubmit: (values, { setSubmitting, setErrors }) => {
       setTimeout(() => {
         // Simulates server side validation
-        const errors = {} as any;
+        const errors = {} as any
 
         if (!values.name) {
-          errors.country = "Name is required";
+          errors.country = 'Name is required'
         }
 
-        setErrors(errors);
-        setSubmitting(false);
-      }, 400);
+        setErrors(errors)
+        setSubmitting(false)
+      }, 400)
     },
-  });
+  })
 
   return (
     <form onSubmit={formik.handleSubmit}>
       <FocusError formik={formik} />
       <input
-        id="values.name"
-        name="values.name"
-        type="text"
+        id='values.name'
+        name='values.name'
+        type='text'
         onChange={formik.handleChange}
         value={formik.values.name}
       />
       {formik.errors.name}
-      <button type="submit" disabled={formik.isSubmitting}>
+      <button type='submit' disabled={formik.isSubmitting}>
         Submit
       </button>
     </form>
-  );
-};
+  )
+}
 
-export default UseFormikExample;
+export default UseFormikExample
 ```
 
 ### Options
 
-| Prop           | Type          | Default  | Description  |
-| -------------- | ------------- | -------- | -------- |
-| `focusDelay`   | number (ms)       | 100      | Time in ms to execute the focus in the error component |
+| Prop         | Type        | Default   | Description                                            |
+| ------------ | ----------- | --------- | ------------------------------------------------------ |
+| `focusDelay` | number (ms) | 100       | Time in ms to execute the focus in the error component |
+| `onFocus`    | Function    | undefined | Function, which executes after an element was focussed |
 
 ## Contribute
 
@@ -143,4 +141,3 @@ I actively welcome pull requests for improvements or fixes.
 ## License
 
 [MIT License](./LICENSE.md)
-

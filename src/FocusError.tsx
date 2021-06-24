@@ -20,11 +20,13 @@ export interface FocusErrorProps {
    * Time in ms to execute the focus in the component with the error, by default 100ms.
    */
   focusDelay?: number;
+  onFocus?: () => void
 }
 
 export function FocusError({
   formik: { isSubmitting, touched, isValidating, errors },
   focusDelay = 100,
+  onFocus
 }: FocusErrorProps) {
   useEffect(() => {
     if (isSubmitting && !isValidating) {
@@ -54,6 +56,7 @@ export function FocusError({
         // This is to avoid the other components autofocus when submitting
         setTimeout(() => {
           errorElement && errorElement.focus();
+          onFocus && onFocus()
         }, focusDelay);
       }
     }
