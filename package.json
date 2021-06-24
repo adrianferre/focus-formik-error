@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/adrianferre/focus-formik-error.git"
   },
-  "version": "1.0.7",
+  "version": "1.1.0",
   "private": false,
   "keywords": [
     "formik",
