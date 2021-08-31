@@ -20,7 +20,7 @@ export interface FocusErrorProps {
    * Time in ms to execute the focus in the component with the error, by default 100ms.
    */
   focusDelay?: number;
-  onFocus?: () => void
+  onFocus?: (errorElement: HTMLElement | null) => void
 }
 
 export function FocusError({
@@ -56,7 +56,7 @@ export function FocusError({
         // This is to avoid the other components autofocus when submitting
         setTimeout(() => {
           errorElement && errorElement.focus();
-          onFocus && onFocus()
+          onFocus && onFocus(errorElement)
         }, focusDelay);
       }
     }
