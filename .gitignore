@@ -7,7 +7,6 @@ dist
 # Misc
 .DS_Store
 .vscode
+.idea
 .npmrc
 tsconfig.tsbuildinfo
-
-
