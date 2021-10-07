@@ -43,20 +43,28 @@ export function FocusError({
       }, [] as string[]);
 
       if (errorNames.length && typeof document !== "undefined") {
-        let errorElement: HTMLElement | null;
+        let errorElement: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | null = null;
+        let errorNameIndex = 0;
 
-        errorNames.forEach((errorKey) => {
-          const selector = `[name="${errorKey}"]`;
-          if (!errorElement) {
-            errorElement = document.querySelector(selector);
-            return;
-          }
-        });
+        while (errorNameIndex < errorNames.length && !errorElement) {
+          errorElement = document.querySelector(`[name="${errorNames[errorNameIndex++]}"]`);
+        }
 
         // This is to avoid the other components autofocus when submitting
         setTimeout(() => {
-          errorElement && errorElement.focus();
-          onFocus && onFocus()
+          if (errorElement) {
+            if (errorElement.type === 'hidden') {
+              errorElement.parentElement?.scrollIntoView({
+                block: 'center',
+              });
+            } else {
+              errorElement.focus();
+            }
+          }
+
+          if (onFocus) {
+            onFocus();
+          }
         }, focusDelay);
       }
     }
